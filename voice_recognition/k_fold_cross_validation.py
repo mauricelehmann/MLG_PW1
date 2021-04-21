@@ -78,7 +78,7 @@ def k_fold_cross_validation(mlp, dataset, k=5, learning_rate=0.01, momentum=0.7,
     if threshold is None:
         return (MSE_train_mean / k, MSE_test_mean / k)
     else:
-        return (MSE_train_mean / k, MSE_test_mean / k, compute_confusion_matrix(target_test, output_test, threshold))
+        return (MSE_train_mean / k, MSE_test_mean / k, compute_confusion_matrix(target_test, output_test, threshold), target_test, output_test)
         
 
 def k_fold_cross_validation_per_epoch(mlp, dataset, k=5, learning_rate=0.01, momentum=0.7, epochs=100):
